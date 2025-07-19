@@ -1,79 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Our Services | Manovista</title>
-  <link rel="stylesheet" href="/css/services.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manovista Consultancy LLP | Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/services.css">
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="quote">Empowering Growth through Expert Consultancy</h1>
-      <div class="explore-btn" onclick="document.getElementById('services-section').scrollIntoView({ behavior: 'smooth' })">
-        Explore Now
-        <div class="arrow">&#x21E3;</div>
-      </div>
+    <div class="page-wrapper">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content fade-in">
+                <h1>Expert Consulting Services</h1>
+                <p class="hero-quote">Tailored financial and HR solutions for sustainable growth and operational optimization for all businesses.</p>
+                <a href="#services" class="explore-btn">Explore Now</a>
+            </div>
+            <a href="#services" class="scroll-down">
+                <i class="fas fa-chevron-down bounce"></i>
+            </a>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">Tailored solutions for your business success</p>
+            
+            <div class="services-grid">
+                <!-- Accounting & Bookkeeping -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Accounting">
+                    </div>
+                    <h3>ACCOUNTING AND BOOKKEEPING SERVICES</h3>
+                    <div class="sub-services">
+                        <a href="#" class="sub-service-btn">Bookkeeping Services</a>
+                        <a href="#" class="sub-service-btn">Preparation Of Financial Statements</a>
+                        <a href="#" class="sub-service-btn">Tax Preparation & Filings</a>
+                        <a href="#" class="sub-service-btn">Tax Compliance & Advisory</a>
+                        <a href="#" class="sub-service-btn">Internal & External Audit Support</a>
+                    </div>
+                </div>
+
+                <!-- Management Consulting -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Management">
+                    </div>
+                    <h3>MANAGEMENT CONSULTING SERVICES</h3>
+                    <div class="sub-services">
+                        <a href="#" class="sub-service-btn">Virtual CFO services</a>
+                        <a href="#" class="sub-service-btn">Financial Restructuring</a>
+                        <a href="#" class="sub-service-btn">Business Process Optimization</a>
+                        <a href="#" class="sub-service-btn">Startup Advisory & Growth Strategies</a>
+                        <a href="#" class="sub-service-btn">Enterprise Risk & Continuity Strategy</a>
+                    </div>
+                </div>
+
+                <!-- Incorporation Services -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1570/1570937.png" alt="Incorporation">
+                    </div>
+                    <h3>INCORPORATION SERVICES</h3>
+                    <div class="sub-services">
+                        <a href="#" class="sub-service-btn">Priavte Limited Company</a>
+                        <a href="#" class="sub-service-btn">Limited Liability Partnership</a>
+                        <a href="#" class="sub-service-btn">One Person Company (OPC)</a>
+                        <a href="#" class="sub-service-btn">Sole Proprietorship</a>
+                        <a href="#" class="sub-service-btn">Partnership</a>
+                    </div>
+                </div>
+
+                <!-- HR Services -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1570/1570951.png" alt="HR Services">
+                    </div>
+                    <h3>HR PROVISION & MANAGEMENT</h3>
+                    <div class="sub-services">
+                        <a href="#" class="sub-service-btn">Hiring & Staffing Support</a>
+                        <a href="#" class="sub-service-btn">Talent Supply & Managed Services</a>
+                        <a href="#" class="sub-service-btn">Payroll Support & Compliance Support</a>
+                        <a href="#" class="sub-service-btn">HR Operation Management</a>
+                        <a href="#" class="sub-service-btn">Employee Training Coordination</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <!-- Services Section -->
-  <section id="services-section" class="services-container">
-    <% const services = [
-      {
-        title: "Accounting & Bookkeeping Services",
-        sub: [
-          "Accurate bookkeeping & maintenance of records",
-          "Preparation of financial statements",
-          "Tax preparation & filings",
-          "Tax compliance & advisory",
-          "Internal & external audit support"
-        ]
-      },
-      {
-        title: "Management Consulting Services",
-        sub: [
-          "Virtual CFO services",
-          "Financial restructuring",
-          "Business process optimization",
-          "Startup advisory"
-        ]
-      },
-      {
-        title: "Incorporation Services",
-        sub: [
-          "Company incorporation",
-          "LLP incorporation",
-          "Partnership firm registration",
-          "Proprietorship firm registration",
-          "Section 8 company/NGO registration"
-        ]
-      },
-      {
-        title: "HR Provision & Management",
-        sub: [
-          "HR consulting",
-          "Talent acquisition",
-          "Policy formulation & implementation",
-          "Employee engagement programs",
-          "Performance management systems",
-          "Payroll management",
-          "Workforce efficiency enhancement"
-        ]
-      }
-    ]; %>
-
-    <% services.forEach(service => { %>
-      <div class="glass-card">
-        <h2><%= service.title %></h2>
-        <ul>
-          <% service.sub.forEach(sub => { %>
-            <li><a href="#"><%= sub %></a></li>
-          <% }) %>
-        </ul>
-      </div>
-    <% }) %>
-  </section>
+    <script src="/js/services.js">
+    </script>
 </body>
 </html>
