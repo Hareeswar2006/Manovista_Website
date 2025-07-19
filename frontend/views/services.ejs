@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services | Manovista</title>
+  <link rel="stylesheet" href="/css/services.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="quote">Empowering Growth through Expert Consultancy</h1>
+      <div class="explore-btn" onclick="document.getElementById('services-section').scrollIntoView({ behavior: 'smooth' })">
+        Explore Now
+        <div class="arrow">&#x21E3;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services-section" class="services-container">
+    <% const services = [
+      {
+        title: "Accounting & Bookkeeping Services",
+        sub: [
+          "Accurate bookkeeping & maintenance of records",
+          "Preparation of financial statements",
+          "Tax preparation & filings",
+          "Tax compliance & advisory",
+          "Internal & external audit support"
+        ]
+      },
+      {
+        title: "Management Consulting Services",
+        sub: [
+          "Virtual CFO services",
+          "Financial restructuring",
+          "Business process optimization",
+          "Startup advisory"
+        ]
+      },
+      {
+        title: "Incorporation Services",
+        sub: [
+          "Company incorporation",
+          "LLP incorporation",
+          "Partnership firm registration",
+          "Proprietorship firm registration",
+          "Section 8 company/NGO registration"
+        ]
+      },
+      {
+        title: "HR Provision & Management",
+        sub: [
+          "HR consulting",
+          "Talent acquisition",
+          "Policy formulation & implementation",
+          "Employee engagement programs",
+          "Performance management systems",
+          "Payroll management",
+          "Workforce efficiency enhancement"
+        ]
+      }
+    ]; %>
+
+    <% services.forEach(service => { %>
+      <div class="glass-card">
+        <h2><%= service.title %></h2>
+        <ul>
+          <% service.sub.forEach(sub => { %>
+            <li><a href="#"><%= sub %></a></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% }) %>
+  </section>
+</body>
+</html>
