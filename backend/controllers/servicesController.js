@@ -17,3 +17,7 @@ export const getOnePersonCompanyPage = (req, res) => {
 export const getSoleProprietorshipPage = (req, res) => {
   res.render('services/sole');
 };
+
+export const getPartnershipPage = (req, res) => {
+  res.render('services/partnership');
+};
