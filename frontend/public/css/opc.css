@@ -1,0 +1,471 @@
+/*
+ * This CSS file for One Person Company (OPC) page is designed for a completely refreshed,
+ * professional, and contemporary look.
+ *
+ * MAJOR UPDATE: "Documents Required" section completely redesigned.
+ * - List items are now presented as an elegant grid of cards with subtle elevation and hover effects.
+ * - This change is isolated to the Documents section only.
+ * - All previous fixes for alignment in Eligibility and bright gold icons remain untouched and fully functional.
+ */
+
+:root {
+    /* New Professional & Contemporary Color Palette */
+    --primary-dark: #2D3A4B; /* Rich Charcoal for headings, main text, footer */
+    --primary-accent: #3A906E; /* Professional Teal/Green for buttons, main icons */
+    --secondary-accent: #FFD700; /* BRIGHTER, VIBRANT GOLD (HEX: #FFD700 - Gold standard) */
+    --accent-gold: #FFD700;
+    --background-light: #F8F9FA; /* Very subtle, warm off-white for light sections */
+    --background-medium: #EFEFF4; /* Gentle, subtle light gray for alternating sections */
+    --text-body: #555555; /* Dark readable gray for general text on light backgrounds */
+    --text-light: #E0E0E0; /* Soft off-white for text on dark backgrounds */
+    --border-color: #D3D3D3; /* Light gray for subtle borders */
+    --white: #ffffff; /* Pure white for specific elements like benefit cards */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light); /* Base background for the page */
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
+.page-wrapper {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { font-size: 2.5rem; color: var(--primary-dark); text-align: center; margin-bottom: 60px; } /* Default for light backgrounds */
+h3 { font-size: 1.4rem; }
+
+section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Base styling for all content sections */
+.content-section {
+    padding: 60px 0;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+/* Updated Section Backgrounds (Using New Palette) */
+/*
+   Based on the HTML structure:
+   1. Hero (section.hero) - Image BG with Primary Dark Overlay
+   2. Overview (section.content-section.key-advantages:nth-of-type(2)) -> background-light
+   3. Benefits (section.content-section.key-advantages:nth-of-type(3)) -> background-medium
+   4. Eligibility (section.content-section.key-advantages:nth-of-type(4)) -> background-light
+   5. Process (section.process) -> primary-dark
+   6. Documents (section.content-section.key-advantages:nth-of-type(6)) -> background-medium
+   7. Footer (section.footer) - primary-dark
+*/
+
+/* Overview Section */
+section.content-section.key-advantages:nth-of-type(2) {
+    background: var(--background-light);
+}
+
+/* Key Benefits Section */
+section.content-section.key-advantages:nth-of-type(3) {
+    background: var(--background-medium); /* Soft light gray */
+}
+/* Ensure headings are dark on this medium background */
+section.content-section.key-advantages:nth-of-type(3) h2 {
+    color: var(--primary-dark);
+}
+
+
+/* Eligibility & Restrictions Section */
+section.content-section.key-advantages:nth-of-type(4) {
+    background: var(--background-light);
+}
+/* Ensure headings are dark on this light background */
+section.content-section.key-advantages:nth-of-type(4) h2 {
+    color: var(--primary-dark);
+}
+
+
+/* Documents Required Section */
+section.content-section.key-advantages:nth-of-type(6) {
+    background: var(--background-medium);
+}
+/* Ensure headings are dark on this medium background */
+section.content-section.key-advantages:nth-of-type(6) h2 {
+    color: var(--primary-dark);
+}
+
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.key-advantages{
+    padding : 25px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+.centered-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* Hero Section */
+.hero.opc-hero {
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/opc-hero.jpg') no-repeat center center/cover; /* Using new primary-dark for overlay */
+    background-attachment: fixed;
+    padding: 200px 0;
+    text-align: center;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 20px auto 40px;
+    color: var(--text-light);
+    max-width: 720px;
+}
+
+/* Content Row Styling (within content-section for Overview, Documents) */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 3rem;
+    padding: 0 20px;
+}
+.content-row:last-child {
+    margin-bottom: 0;
+}
+.content-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.content-text { flex: 1; }
+.content-image { flex: 1; }
+.content-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.content-text h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+.content-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.content-text li {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start; /* Corrected to align icon with the top of the text */
+}
+.content-text li i {
+    color: var(--primary-accent); /* Using primary-accent for list icons */
+    margin-right: 15px;
+    margin-top: 4px; /* Slight top margin to align with the first line of text */
+}
+
+/* Benefits Grid Layout */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    background-color: var(--white); /* White cards on medium background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.benefit-item i {
+    font-size: 3.8rem;
+    color: var(--primary-accent); /* Primary accent for icons on white cards */
+    margin-bottom: 25px;
+}
+
+.benefit-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    color: var(--text-body);
+}
+
+/* Eligibility & Restrictions Layout */
+.eligibility-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.eligibility-item {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+/* Visual divider between eligibility columns on large screens */
+.eligibility-item:first-child {
+    border-right: 1px solid var(--border-color); /* Using new border color */
+    padding-right: 30px;
+}
+.eligibility-item:last-child {
+    padding-left: 30px;
+}
+
+.eligibility-item h3 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.eligibility-item ul {
+    list-style: none;
+    padding-left: 0; /* Ensure no default padding from ul */
+}
+
+.eligibility-item li {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start; /* CRITICAL FIX: Ensures icon aligns with the top of the text */
+    padding-left: 0; /* Ensure the list item itself has no padding interfering */
+}
+
+.eligibility-item li i {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    min-width: 20px; /* Ensures consistent space for icons, regardless of icon width */
+    text-align: center;
+    line-height: 1.2; /* Adjust line-height to better align with text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    padding: 0; /* Ensure no internal padding on icon */
+    vertical-align: top; /* Explicit vertical alignment */
+}
+
+/* Specific colors for check/times icons, ensuring they are not overridden by gold */
+.eligibility-item li i.fa-times-circle {
+    color: #DC3545; /* Specific red for restrictions */
+}
+.eligibility-item li i.fa-check-circle {
+    color: #28A745; /* Specific green for eligibility */
+}
+
+/* Process Section */
+.process {
+    background-color: var(--primary-dark); /* Dark charcoal background */
+}
+.process h2 { color: var(--text-light); } /* Light text on dark background */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 60px;
+}
+.step-icon {
+    font-size: 3.5rem;
+    color: var(--secondary-accent); /* Using the brighter gold */
+    margin-bottom: 20px;
+}
+.step h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* Documents Required List - New Card Grid Layout */
+.documents-required-list {
+    display: grid; /* Changed to CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid: min 300px wide cards */
+    gap: 25px; /* Space between cards */
+    list-style: none; /* Ensure no default list bullets */
+    padding: 0; /* Remove default padding */
+    margin-top: 30px; /* Space from the H3 above */
+}
+
+.documents-required-list li {
+    background-color: var(--white); /* White background for each card */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Subtle elevation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+
+    /* Maintain icon-text alignment within the card */
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.05rem;
+    margin-bottom: 0; /* Reset margin-bottom from general li style, grid gap handles spacing */
+}
+
+.documents-required-list li:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.documents-required-list li i {
+    color: var(--primary-accent); /* Ensuring green checkmark icons for documents */
+    font-size: 1.2rem;
+    margin-right: 12px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.2;
+    flex-shrink: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+
+/* Call to Action Section (Footer styling) */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 80px 0 30px;
+    text-align: center;
+}
+.footer h3 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+.footer p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    section { padding: 80px 0; }
+    .content-section { padding: 40px 0; }
+    .content-row, .content-row:nth-child(even) {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .eligibility-container {
+        flex-direction: column;
+    }
+    /* Remove the vertical divider on smaller screens */
+    .eligibility-item:first-child {
+        border-right: none;
+        padding-right: 20px;
+    }
+    .eligibility-item:last-child {
+        padding-left: 20px;
+    }
+    .hero { padding: 100px 0; }
+    .content-image img { max-width: 80%; margin: 0 auto; }
+    .content-text h3 { text-align: center; }
+    .content-text ul { text-align: left; }
+
+    /* Documents Required list responsiveness (auto-fit minmax will handle this implicitly better) */
+    .documents-required-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for smaller screens */
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    section { padding: 60px 0; }
+    .content-section { padding: 30px 0; }
+    .process-steps { grid-template-columns: 1fr; }
+    .hero { padding: 80px 0; }
+    .content-text h3 { font-size: 1.8rem; }
+
+    /* Documents Required list responsiveness */
+    .documents-required-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Further adjust min-width */
+        gap: 15px;
+    }
+}
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    .hero-content p { font-size: 1rem; }
+    .btn { padding: 12px 25px; font-size: 1rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 40px; }
+    .content-text h3 { font-size: 1.5rem; }
+    .content-text p, .content-text li { font-size: 0.95rem; }
+    .step-icon { font-size: 3rem; }
+    .footer h3 { font-size: 1.8rem; }
+    .footer p { font-size: 0.9rem; margin-bottom: 30px; }
+    .content-section { padding: 25px 0; }
+    .benefits-grid { gap: 20px; }
+    .benefit-item { padding: 20px; }
+    .eligibility-item { padding: 10px; }
+
+    /* Documents Required list responsiveness (single column on very small screens) */
+    .documents-required-list {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 10px;
+    }
+}
