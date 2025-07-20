@@ -160,8 +160,8 @@ section.content-section.key-advantages:nth-of-type(6) h2 {
 
 /* Hero Section */
 .hero.opc-hero {
-    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/opc-hero.jpg') no-repeat center center/cover; /* Using new primary-dark for overlay */
-    background-attachment: fixed;
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/opc-hero.jpeg') no-repeat center center/cover; /* Using new primary-dark for overlay */
+    /*background-attachment: fixed;*/
     padding: 200px 0;
     text-align: center;
 }

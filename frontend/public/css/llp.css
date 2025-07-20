@@ -142,8 +142,8 @@ section.content-section.key-advantages:nth-of-type(5) {
 
 /* Hero Section */
 .hero.llp-hero {
-    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/hero-llp.jpg') no-repeat center center/cover;
-    background-attachment: fixed; /* Parallax effect for richness */
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/hero-llp.jpeg') no-repeat center center/cover;
+   /* background-attachment: fixed;  Parallax effect for richness */
     padding: 200px 0;
     text-align: center;
 }

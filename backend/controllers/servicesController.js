@@ -9,6 +9,11 @@ export const getPrivateLimitedPage = (req, res) => {
 export const getLimitedLiabilityPage = (req, res) => {
   res.render('services/llp');
 };
+
 export const getOnePersonCompanyPage = (req, res) => {
   res.render('services/opc');
+};
+
+export const getSoleProprietorshipPage = (req, res) => {
+  res.render('services/sole');
 };
