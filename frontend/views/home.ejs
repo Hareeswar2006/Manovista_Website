@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manovista Consulting </title>
+   <link rel = "stylesheet" href = "man.css">
+</head>
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop class="video-bg">
+    <source src="https://media.istockphoto.com/id/1388953592/video/4k-video-footage-of-a-group-of-businesspeople-having-a-meeting-in-a-modern-office.mp4?s=mp4-640x640-is&k=20&c=rVkaVu6Z5gtgWzxfiuKH9WjKh4TWnDXTPCztRB71oEA=" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Black overlay -->
+  <div class="overlay"></div>
+
+  <!-- Fixed Header -->
+  <header>
+    <div class = "logo">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop,q=95/m2W8yD1GLRSbX9Mr/screenshot-2025-05-13-173125-A85eJ3NnNjTKg2jW.png" width = "40%">
+    </div>
+    <div class = "field">
+        <a id = "home">Home</a>
+        <a id = "about">About</a>
+        <a id = "service">Service</a>
+        <a id = "contact">Contact</a>
+    </div>
+    <div class = "touch">
+        <button id = "touch" onclick = "alert('works!!')">Get In Touch</button>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <div class="content">
+    <div class = "block1">
+        <div class = "topL">
+            <h1 style = "font-size: 46px; text-align: center;">Strategic Financial Insights.Smarter Decisions.Sustainable Growth.</h1>
+            <p style = "font-size: 20px;text-align: start;">At Manovista Consulting LLP, we take care of your business registration, compliance, and financial planning—so you can focus on scaling your vision with confidence.</p> <br> 
+            <p style = "font-size: 20px;text-align: start;font-weight: bold;">✅ Accounting and Bookkeeping Services<br>  
+               ✅ Management Consultancy Activities<br>
+               ✅ Human Resources Provision and Management of Human Resource Functions<br>
+               ✅ Incorporation Services<br>
+            </p><br>
+            <button id = "contact_now" onclick = "alert('Works!!')">Contact Us</button>
+        </div>
+        <div class = "topR">
+          <form>
+            <label for = "name">Name</label>
+            <input type="text" id = "name"placeholder="Enter your Name">
+
+            <label for = "email">Email Address*</label>
+            <input type="email" id = "email"placeholder="Enter your email address" required>
+
+            <label for = "phone">Phone/Mobile*</label>
+            <input type="tel" id = "phone"placeholder="Short answer" required>
+
+            <label for ="loc">Location</label>
+            <input type="text" id = "loc" placeholder="Short answer">
+
+            <label>Type Of Service*</label>
+            <label><input type="checkbox"> Accounting & Bookkeeping</label><br>
+            <label><input type="checkbox"> Management Consulting</label><br>
+            <label><input type="checkbox"> Human Resource Provision & Management</label><br>
+            <label><input type="checkbox"> Incorporation Services</label>
+
+            <label for = "mes">Your Message</label> 
+            <textarea id= "mes" placeholder="Type your message here"></textarea>
+
+            <button id = "sub" type="submit">Submit Form</button>
+          </form>
+        </div>
+    </div>
+
+    <div class = "block2">
+        <div class="about-left">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=328,h=376,fit=crop/m2W8yD1GLRSbX9Mr/1-3-YD0lKoL3QVCvQvk0.jpg" alt="Manovista Logo">
+          <div class="quote">
+            <p><strong>❝ Expert guidance for your business needs.</strong></p>
+            <p><strong>Manovista</strong></p>
+          </div>
+        </div>
+
+    <!-- Right Side: About Us Text -->
+        <div class="about-right">
+          <h1>About Us</h1><br>
+          <h3>Manovista Consulting LLP: Your Trusted Partner for Business Consulting & Financial Empowerment.</h3><br>
+          <p>
+            At <strong>Manovista Consulting LLP</strong>, we provide expert business consulting solutions specializing in 
+            <strong>Accounting, CFO services,</strong> and <strong>HR management</strong> for companies worldwide. 
+            Our mission is to deliver <strong>reliable, cost-effective</strong> support that helps businesses streamline operations, 
+            improve decision-making, and focus on sustainable growth.
+          </p>
+          <p>
+            At <strong>Manovista Consulting LLP</strong>, we believe in <strong>trust, integrity, and innovation</strong>, 
+            ensuring that every business—regardless of size—has access to world-class financial and HR solutions. 
+            Let us be your <strong>trusted partner</strong> in achieving sustainable business excellence.
+          </p><br>
+          <button class="about-btn">More About Us</button>
+        </div>
+    </div>
+    <div class="services-section fade-section" id = "service-section">
+      <div class="service-card">
+        <h3>Accounting and Bookkeeping Services</h3>
+        <ul>
+          <li>Bookkeeping Services</li>
+          <li>Tax Preparation and filings</li>
+          <li>Tax Compliance and Advisory</li>
+          <li>Internal & External Audit Support</li>
+          <li>Preparation of Financial Statements</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Management Consulting Services</h3>
+        <ul>
+          <li>Virtual CFO Services</li>
+          <li>Financial Consulting</li>
+          <li>Business Process Optimization</li>
+          <li>Startup advisory and Growth Strategies</li>
+          <li>Risk Management and Business Planning</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Human Resource Provision &<br> Management Functions</h3>
+        <ul>
+          <li>HR Staffing and Recruitment Services</li>
+          <li>Manpower Supply and Outsourcing</li>
+          <li>Payroll and Compliance Support</li>
+          <li>HR Operations Management</li>
+          <li>Employee Training Coordination</li>
+        </ul>
+      </div>
+    </div>
+
+  <section class="why-manovista fade-section" id="why-manovista">
+    <h2>Why Manovista ?</h2>
+    <div class="stats-cards">
+      <div class="card">
+        <h3>35+</h3>
+        <p>Startups Served<br>Across India</p>
+      </div>
+      <div class="card">
+        <h3>50+</h3>
+        <p>Company Filings<br>Every Month</p>
+      </div>
+      <div class="card">
+        <h3>100+</h3>
+        <p>MSMEs<br>Empowered</p>
+      </div>
+      <div class="card">
+        <h3>150+</h3>
+        <p>Bookkeeping &<br>Cloud Accounting<br>Services</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class = "fade-section" id="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Manovista Consulting LLP</h3>
+        <p>
+          Manovista Consulting LLP is India’s premier business growth partner,<br>
+          empowering startups and enterprises to transform vision into lasting success.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><a href="tel:+918019626241">+91 8019626241</a></p>
+        <p><a href="mailto:info@manovista.in">info@manovista.in</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Services</a></p>
+        <p><a href="#">Contact Us</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025. All rights reserved Manovista Consulting LLP.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // For fade-out when scrolling up
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.fade-section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+</body>
+</html>
