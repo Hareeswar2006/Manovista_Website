@@ -33,9 +33,9 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light); /* Base background for the page */
-    color: var(--text-body);
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
     line-height: 1.7;
 }
 
@@ -162,7 +162,7 @@ section.content-section.key-advantages:nth-of-type(6) h2 {
 .hero.opc-hero {
     background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/opc-hero.jpeg') no-repeat center center/cover; /* Using new primary-dark for overlay */
     /*background-attachment: fixed;*/
-    padding: 200px 0;
+    padding: 220px 0;
     text-align: center;
 }
 .hero-content p {
