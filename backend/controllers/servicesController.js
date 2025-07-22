@@ -3,21 +3,21 @@ export const getServices = (req, res) => {
 };
 
 export const getPrivateLimitedPage = (req, res) => {
-  res.render('services/plc');
+  res.render('incorporation_services/plc');
 };
 
 export const getLimitedLiabilityPage = (req, res) => {
-  res.render('services/llp');
+  res.render('incorporation_services/llp');
 };
 
 export const getOnePersonCompanyPage = (req, res) => {
-  res.render('services/opc');
+  res.render('incorporation_services/opc');
 };
 
 export const getSoleProprietorshipPage = (req, res) => {
-  res.render('services/sole');
+  res.render('incorporation_services/sole');
 };
 
 export const getPartnershipPage = (req, res) => {
-  res.render('services/partnership');
+  res.render('incorporation_services/partnership');
 };
