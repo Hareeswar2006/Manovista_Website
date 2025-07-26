@@ -19,9 +19,9 @@
         }
 
         body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          color: var(--text-dark);
-          background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+          font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          color: #343a40;;
+          background-color: #e9f0f8;
           line-height: 1.6;
           overflow-x: hidden;
         }

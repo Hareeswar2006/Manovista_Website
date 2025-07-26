@@ -1,0 +1,506 @@
+/*
+ * CSS file for Partnership page, meticulously adapted from sole-proprietorship.css.
+ * It features a professional and contemporary look consistent with Manovista Consulting LLP.
+ *
+ * This version includes fixes for disadvantage icon color, process step layout,
+ * key documents section layout, and now content alignment within grid items.
+ */
+
+:root {
+    /* Color Palette - Directly from sole-proprietorship.css, with new blue accent */
+    --primary-dark: #2D3A4B; /* Rich Charcoal for headings, main text, footer */
+    --primary-accent: #3A906E; /* Professional Teal/Green for buttons, main icons */
+    --secondary-accent: #FFD700; /* BRIGHTER, VIBRANT GOLD */
+    --accent-gold: #FFD700;
+    --tertiary-accent: #4A90E2; /* NEW: Professional, calming Blue for informational icons */
+    --danger-red: #DC3545; /* Distinct red for disadvantages/warnings */
+    --background-light: #F8F9FA; /* Very subtle, warm off-white for light sections */
+    --background-medium: #EFEFF4; /* Gentle, subtle light gray for alternating sections */
+    --text-body: #555555; /* Dark readable gray for general text on light backgrounds */
+    --text-light: #E0E0E0; /* Soft off-white for text on dark backgrounds */
+    --border-color: #D3D3D3; /* Light gray for subtle borders */
+    --white: #ffffff; /* Pure white for specific elements like benefit cards */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
+    line-height: 1.7;
+}
+
+.page-wrapper {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { font-size: 2.5rem; color: var(--primary-dark); text-align: center; margin-bottom: 60px; } /* Default for light backgrounds */
+h3 { font-size: 1.4rem; }
+
+section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Base styling for all content sections */
+.content-section {
+    padding: 60px 0;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+/* Section Backgrounds - Using specific classes for robustness */
+.section-overview {
+    background: var(--background-light);
+}
+
+.section-advantages-disadvantages {
+    background: var(--background-medium); /* Soft light gray */
+}
+.section-advantages-disadvantages h2 { /* Ensure headings are dark on this medium background */
+    color: var(--primary-dark);
+}
+
+/* The .process class already handles its own background color in the .process selector */
+
+.section-documents {
+    background: var(--background-medium);
+}
+.section-documents h2 { /* Ensure headings are dark on this medium background */
+    color: var(--primary-dark);
+}
+.section-compliance { /* New section for compliance */
+    background: var(--background-light);
+}
+.section-compliance h2 {
+    color: var(--primary-dark);
+}
+
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.key-advantages{
+    padding : 25px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4); /* Greenish shadow on hover as in Sole Prop */
+}
+
+.centered-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* Hero Section */
+.hero.partnership-hero {
+    /* Using the deep background from Sole Prop hero but adjusting overlay for context */
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/partnership-hero.jpg') no-repeat center center/cover; /* Ensure scrolling behavior as desired */
+    padding: 210px 0;
+    text-align: center;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 20px auto 40px;
+    color: var(--text-light);
+    max-width: 720px;
+}
+
+/* Content Row Styling (within content-section for Overview) */
+.content-row {
+    display: flex;
+    align-items: center; /* Generally center content vertically */
+    gap: 60px;
+    margin-bottom: 3rem;
+    padding: 0 20px;
+}
+.content-row:last-child {
+    margin-bottom: 0;
+}
+/* No explicit flex-direction: row-reverse; in Sole Prop, so will keep consistent with default row */
+.content-text { flex: 1; }
+.content-image { flex: 1; }
+.content-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.content-text h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+.content-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.content-text li {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start; /* CRITICAL FIX: Ensures icon aligns with the top of the text */
+}
+.content-text li i {
+    color: var(--tertiary-accent); /* BLUE for informational lists */
+    margin-right: 15px;
+    margin-top: 4px; /* Slight top margin to align with the first line of text */
+}
+
+/* === NEW SECTION: CONTENTS OF PARTNERSHIP DEED GRID === */
+.partnership-deed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Two columns for larger screens, auto-fit for responsiveness */
+    gap: 30px; /* Space between grid items */
+    margin-top: 40px;
+}
+
+.deed-item {
+    background-color: var(--white); /* White background for each deed item card */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Subtle shadow for elevation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack icon, heading, and paragraph */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Ensure text alignment is left */
+    border: 1px solid var(--border-color); /* Subtle border */
+}
+
+.deed-item:hover {
+    transform: translateY(-7px); /* Lift on hover */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+.deed-item i {
+    font-size: 2.8rem; /* Larger icon for prominence */
+    color: var(--tertiary-accent); /* BLUE for informational lists */
+    margin-bottom: 15px; /* Space below icon */
+}
+
+.deed-item h3 {
+    font-size: 1.5rem; /* Heading size for deed item */
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.deed-item p {
+    font-size: 1rem; /* Paragraph text size */
+    color: var(--text-body);
+    margin-bottom: 0; /* No bottom margin if it's the last element in the card */
+    flex-grow: 1; /* Allow paragraph to grow and fill available space */
+}
+
+
+/* Benefits Grid Layout (Used for Advantages/Disadvantages/Compliance) */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.benefit-item {
+    background-color: var(--white); /* White cards on medium background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align content to start */
+}
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.benefit-item i {
+    font-size: 3.8rem;
+    /* Default color for benefit items, overridden by specific section rules below */
+}
+.benefit-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+.benefit-item p {
+    font-size: 1rem;
+    color: var(--text-body);
+    flex-grow: 1; /* Allow the paragraph to grow and fill available space */
+}
+
+/* Specific Icon Colors for Advantages/Disadvantages Sections */
+/* Targeting the advantages section specifically for green icons */
+.section-advantages-disadvantages .benefits-grid .benefit-item i {
+    color: var(--primary-accent); /* Green for advantages */
+}
+
+/* Targeting the disadvantages section specifically for red icons */
+/* The disadvantages section uses .section-overview for its background */
+.section-overview .benefits-grid .benefit-item i {
+    color: var(--danger-red); /* RED for disadvantages */
+}
+
+
+/* Process Section */
+.process {
+    background-color: var(--primary-dark); /* Dark charcoal background */
+}
+.process h2 { color: var(--text-light); } /* Light text on dark background */
+.process-steps {
+    display: grid;
+    /* Default to 3 columns, adjusted below for larger screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 60px;
+}
+
+.step { /* Apply flex properties directly to the step items */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to start */
+    height: 100%; /* Ensure the step item takes full height of its grid cell */
+}
+.step-icon {
+    font-size: 3.5rem;
+    color: var(--secondary-accent); /* GOLD for process steps */
+    margin-bottom: 20px;
+}
+.step h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+.step p {
+    flex-grow: 1; /* Allow the paragraph to grow and fill available space */
+}
+
+/* === ENHANCEMENTS FOR "DOCUMENTS REQUIRED" SECTION === */
+.documents-required-list {
+    display: grid;
+    /* Default to 1 column on smaller screens, 2 columns on larger */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted default for better small-screen fit */
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+/* Specifically target larger screens for 2 columns */
+@media (min-width: 768px) { /* Applying this from tablet size up */
+    .documents-required-list {
+        grid-template-columns: repeat(2, 1fr); /* FORCING TWO IN A ROW */
+        gap: 40px; /* Increased gap for better spacing between two large cards */
+    }
+}
+
+.documents-required-list li {
+    background-color: var(--white); /* White background for each card */
+    padding: 30px; /* Increased padding for a more premium feel */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Stronger, more defined shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: flex-start; /* Align icon with the top of the text */
+    font-size: 1.1rem; /* Slightly larger text */
+    color: var(--text-body);
+    margin-bottom: 0; /* Reset margin-bottom from general li style, grid gap handles spacing */
+    border: 1px solid var(--border-color); /* Subtle border for definition */
+    /* If the issue persists for documents, you might consider wrapping the text in a <span> and flex-grow it.
+       For now, grid's default stretch on li should help with overall row height. */
+}
+.documents-required-list li:hover {
+    transform: translateY(-7px); /* Lift card more on hover */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+.documents-required-list li i {
+    color: var(--primary-accent); /* GREEN for documents (implies 'included') */
+    font-size: 1.5rem; /* Larger icon */
+    margin-right: 20px; /* More space between icon and text */
+    min-width: 28px; /* Ensure consistent spacing */
+    text-align: center;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+/* Specific Icon Colors for Essential Compliance Section */
+.section-compliance .benefit-item i {
+    color: var(--tertiary-accent); /* BLUE for essential compliance */
+}
+
+
+/* Call to Action Section (Footer styling) */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 80px 0 30px;
+    text-align: center;
+}
+.footer h3 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+.footer p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    section { padding: 80px 0; }
+    .content-section { padding: 40px 0; }
+    .content-row {
+        flex-direction: column; /* Stack image and text */
+        gap: 40px;
+    }
+    .content-text, .content-image {
+        min-width: unset;
+        width: 100%;
+    }
+    .hero { padding: 100px 0; }
+    .content-image img { max-width: 80%; margin: 0 auto; }
+    .content-text h3 { text-align: center; }
+    .content-text ul { text-align: left; }
+
+    /* Partnership Deed Grid: 1 column on medium screens */
+    .partnership-deed-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust min-width for mobile */
+        gap: 25px;
+    }
+    .deed-item i {
+        font-size: 2.5rem; /* Adjust icon size for smaller screens */
+    }
+    .deed-item h3 {
+        font-size: 1.4rem;
+    }
+    .deed-item p {
+        font-size: 0.95rem;
+    }
+
+
+    /* Process steps: 2 columns on medium screens */
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr); /* Back to 2 columns on smaller screens */
+        gap: 30px; /* Adjust gap for 2 columns */
+    }
+    /* Documents Required list responsiveness (auto-fit minmax will handle this implicitly better) */
+    .documents-required-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for smaller screens */
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; } /* Adjusted for mobile view */
+    h2 { font-size: 1.8rem; }
+    section { padding: 60px 0; }
+    .content-section { padding: 30px 0; }
+    /* Process steps: 1 column on smaller screens */
+    .process-steps { grid-template-columns: 1fr; }
+    .hero { padding: 80px 0; }
+    .content-text h3 { font-size: 1.8rem; }
+
+    /* Partnership Deed Grid: 1 column on smaller screens */
+    .partnership-deed-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+    .deed-item {
+        padding: 25px; /* Adjust card padding for mobile */
+        text-align: center; /* Center content on mobile for deed items */
+        align-items: center;
+    }
+    .deed-item h3 {
+        text-align: center;
+    }
+    .deed-item p {
+        text-align: center;
+    }
+
+
+    /* Documents Required list responsiveness */
+    .documents-required-list {
+        grid-template-columns: 1fr; /* Single column on mobile for documents */
+        gap: 15px;
+    }
+    .documents-required-list li {
+        padding: 20px; /* Adjust card padding for mobile */
+        font-size: 1rem;
+    }
+    .documents-required-list li i {
+        font-size: 1.3rem; /* Adjust icon size for mobile */
+    }
+}
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    .hero-content p { font-size: 1rem; }
+    .btn { padding: 12px 25px; font-size: 1rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 40px; }
+    .content-text h3 { font-size: 1.5rem; }
+    .content-text p, .content-text li { font-size: 0.95rem; }
+    .step-icon { font-size: 3rem; }
+    .footer h3 { font-size: 1.8rem; }
+    .footer p { font-size: 0.9rem; margin-bottom: 30px; }
+    .content-section { padding: 25px 0; }
+    .benefits-grid { gap: 20px; }
+    .benefit-item { padding: 20px; }
+    /* documents and deed box adjustments for smallest screens */
+    .documents-required-list {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 10px;
+    }
+    .documents-required-list li {
+        padding: 15px;
+    }
+}

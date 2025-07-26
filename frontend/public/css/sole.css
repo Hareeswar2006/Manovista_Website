@@ -31,9 +31,9 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light); /* Base background for the page */
-    color: var(--text-body);
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
     line-height: 1.7;
 }
 

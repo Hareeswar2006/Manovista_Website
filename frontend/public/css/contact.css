@@ -1,0 +1,91 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+ font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ color: #343a40;;
+ background-color: #e9f0f8;
+  line-height: 1.6;
+}
+
+
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+  
+  background-image: url('/assets/bg2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px;
+  min-height: 100vh;
+
+  /* Add this to make content readable */
+  
+  color: #000000; /* make sure text is dark enough */
+}
+
+
+
+.contact-info {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.contact-form {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+
+
+
+.contact-form button {
+  margin-top: 10px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.map-section {
+  margin-top: 20px;
+}
