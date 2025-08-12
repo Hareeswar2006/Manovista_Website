@@ -21,3 +21,7 @@ export const getSoleProprietorshipPage = (req, res) => {
 export const getPartnershipPage = (req, res) => {
   res.render('incorporation_services/partnership');
 };
+
+export const getBookkeepingPage = (req, res) => {
+  res.render('incorporation_services/bookkeeping');
+};
