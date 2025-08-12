@@ -1,0 +1,569 @@
+:root {
+    --primary-dark: #12141D;
+    --primary-blue: #1B263B;
+    --secondary-blue: #2a3952;
+    --light-gray: #f4f7f5;
+    --accent-gold: #FFD700;
+    --white: #ffffff;
+    --text-light: #e0e1dd;
+    --text-dark: #333;
+    --border-color: #e1e1e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* Ensure no white overlays on the page */
+body::before,
+body::after {
+    display: none !important;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { font-size: 2.5rem; color: var(--primary-dark); text-align: center; margin-bottom: 60px; }
+h3 { font-size: 1.4rem; }
+
+section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* First fade-in section after hero */
+.hero + .fade-in-section {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure proper spacing between sections */
+.fade-in-section {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Fix header logo visibility */
+.main-header {
+    z-index: 1000 !important;
+}
+
+.main-header .header-logo img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1001 !important;
+}
+
+/* Ensure images in fade-in sections are visible */
+.fade-in-section img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 2 !important;
+    position: relative;
+}
+
+/* Fix any white overlay issues */
+.fade-in-section::before,
+.fade-in-section::after {
+    display: none !important;
+}
+
+.content-section {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.key-advantages {
+    padding: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+.centered-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/bookkeeping-service/bookkeeping_service.jpg') no-repeat center center/cover;
+    padding: 180px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 20px auto 40px;
+    color: var(--text-light);
+    max-width: 800px;
+}
+
+/* Content Row */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.content-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.content-image:hover img {
+    transform: scale(1.05);
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.content-text p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Key Advantages */
+.advantage-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.advantage-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.advantage-img {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.advantage-img img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.advantage-img:hover img {
+    transform: scale(1.05);
+}
+
+.advantage-text {
+    flex: 1;
+}
+
+.advantage-text h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.advantage-text p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Services Overview */
+.services-overview {
+    background: var(--light-gray);
+    padding: 100px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.service-item {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: var(--primary-dark);
+}
+
+.service-item h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.service-item p {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 100px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted minmax for smaller cards */
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.benefit-icon i {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.benefit-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.benefit-card p {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* Process Section */
+.process {
+    background: var(--light-gray);
+    padding: 100px 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted minmax for smaller cards */
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.step {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.step-icon i {
+    font-size: 2rem;
+    color: var(--primary-dark);
+}
+
+.step h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.step p {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* Accordion Section */
+.accordion-section {
+    padding: 100px 0;
+}
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: var(--white);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 25px 30px;
+    background: var(--white);
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: var(--light-gray);
+}
+
+.accordion-header i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content-inner {
+    padding: 0 30px 25px;
+}
+
+.accordion-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.accordion-content-inner p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.accordion-content-inner ul {
+    margin-left: 20px;
+    color: var(--text-dark);
+}
+
+.accordion-content-inner li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0 40px;
+}
+
+.footer h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.footer p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--secondary-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .content-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .advantage-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .advantage-row.reverse {
+        flex-direction: column;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Stack cards vertically on small screens */
+    .benefits-grid,
+    .process-steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero {
+        padding: 120px 0;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .accordion-header {
+        padding: 20px 20px;
+        font-size: 1rem;
+    }
+    
+    .accordion-content-inner {
+        padding: 0 20px 20px;
+    }
+}
