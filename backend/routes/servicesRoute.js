@@ -1,5 +1,5 @@
 import express from "express";
-import { getServices,getPrivateLimitedPage, getLimitedLiabilityPage, getOnePersonCompanyPage, getSoleProprietorshipPage, getPartnershipPage, getBookkeepingPage } from "../controllers/servicesController.js";
+import { getServices,getPrivateLimitedPage, getLimitedLiabilityPage, getOnePersonCompanyPage, getSoleProprietorshipPage, getPartnershipPage, getBookkeepingPage, getFinancialStatementsPage } from "../controllers/servicesController.js";
 
 const router = express.Router();
 router.get("/services", getServices);
@@ -9,4 +9,5 @@ router.get("/services/one-person-company", getOnePersonCompanyPage);
 router.get("/services/sole-proprietorship", getSoleProprietorshipPage);
 router.get("/services/partnership", getPartnershipPage);
 router.get("/services/bookkeeping", getBookkeepingPage);
+router.get("/services/preparation-of-financial-statements", getFinancialStatementsPage);
 export default router;

@@ -25,3 +25,7 @@ export const getPartnershipPage = (req, res) => {
 export const getBookkeepingPage = (req, res) => {
   res.render('incorporation_services/bookkeeping');
 };
+
+export const getFinancialStatementsPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/financial-statements');
+};
