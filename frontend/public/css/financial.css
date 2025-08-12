@@ -1,0 +1,186 @@
+/*
+ * Financial Restructuring Page Styles
+ * Professional, structured, and trustworthy feel
+ */
+
+:root {
+    --primary-color: #1a3d5d;     /* deep corporate blue */
+    --secondary-color: #27a4dd;   /* financial blue accent */
+    --light-bg: #f9fafc;
+    --dark-text: #222;
+    --light-text: #555;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(26, 61, 93, 0.7), rgba(26, 61, 93, 0.7)),
+                url('/assets/financial-hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-quote {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background-color: #1d8ebd;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.content-section:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.centered-text {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.content-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+.content-text p {
+    color: var(--light-text);
+}
+
+.content-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-text ul li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: var(--dark-text);
+}
+
+.content-text ul li i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.content-image {
+    flex: 1;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Process Section */
+.process {
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.step {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-row {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}

@@ -25,3 +25,19 @@ export const getPartnershipPage = (req, res) => {
 export const getEnterprisePage = (req, res) => {
   res.render('management_consulting/enterprise');
 };
+
+export const getVirtualPage = (req, res) => {
+  res.render('management_consulting/virtual');
+};
+
+export const getStartupPage = (req, res) => {
+  res.render('management_consulting/startup');
+};
+
+export const getFinancialPage = (req, res) => {
+  res.render('management_consulting/financial');
+};
+
+export const getBpoPage = (req, res) => {
+  res.render('management_consulting/bpo');
+};
