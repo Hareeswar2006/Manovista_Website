@@ -29,3 +29,7 @@ export const getBookkeepingPage = (req, res) => {
 export const getFinancialStatementsPage = (req, res) => {
   res.render('accounting-and-bookkeeping-services/financial-statements');
 };
+
+export const getTaxPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/tax');
+};
