@@ -140,7 +140,7 @@ section {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/bookkeeping-service/bookkeeping_service.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/bookkeeping-service/tax-compliance.jpg') no-repeat center center/cover;
     padding: 180px 0;
     text-align: center;
     position: relative;
@@ -179,6 +179,10 @@ section {
     transform: none !important; /* Forcefully remove transform */
     border-radius: 10px; /* Applied to image */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Applied to image */
+}
+
+.content-image:hover img {
+    transform: scale(1.05);
 }
 
 .content-text {
@@ -224,6 +228,10 @@ section {
     transform: none !important; /* Forcefully remove transform */
     border-radius: 15px; /* Applied to image */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Applied to image */
+}
+
+.advantage-img:hover img {
+    transform: scale(1.05);
 }
 
 .advantage-text {
