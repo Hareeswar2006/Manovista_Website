@@ -37,3 +37,7 @@ export const getTaxPage = (req, res) => {
 export const getTaxCompliancePage = (req, res) => {
   res.render('accounting-and-bookkeeping-services/tax-compliance');
 };
+
+export const getAuditSupportPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/audit-support');
+};
