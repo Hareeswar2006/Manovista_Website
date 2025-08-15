@@ -141,7 +141,7 @@ section {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/bookkeeping_service.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/bookkeeping-service/Financial-Banner.webp') no-repeat center center/cover;
     padding: 180px 0;
     text-align: center;
     position: relative;
@@ -167,19 +167,19 @@ section {
 
 .content-image {
     flex: 1;
-    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .content-image img {
     width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.content-image:hover img {
-    transform: scale(1.05);
+    height: auto; /* Ensure image scales naturally */
+    display: block; /* Ensure no extra space below image */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    transition: none !important; /* Forcefully remove transition */
+    transform: none !important; /* Forcefully remove transform */
+    border-radius: 10px; /* Applied to image */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Applied to image */
 }
 
 .content-text {
@@ -212,19 +212,19 @@ section {
 
 .advantage-img {
     flex: 1;
-    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .advantage-img img {
     width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.advantage-img:hover img {
-    transform: scale(1.05);
+    height: auto; /* Ensure image scales naturally */
+    display: block; /* Ensure no extra space below image */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    transition: none !important; /* Forcefully remove transition */
+    transform: none !important; /* Forcefully remove transform */
+    border-radius: 15px; /* Applied to image */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Applied to image */
 }
 
 .advantage-text {
@@ -461,9 +461,11 @@ section {
 
 .accordion-img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
+    max-width: 500px; /* Added for consistency with plc.css */
+    display: block; /* Added for consistency with plc.css */
+    margin: 10px auto 1rem auto; /* Aligned with plc.css */
+    border-radius: 12px; /* Adjusted for consistency with plc.css */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Added for consistency with plc.css */
 }
 
 .accordion-content-inner p {
