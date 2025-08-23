@@ -41,3 +41,11 @@ export const getFinancialPage = (req, res) => {
 export const getBpoPage = (req, res) => {
   res.render('management_consulting/bpo');
 };
+
+export const getTaxCompliancePage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/tax-compliance');
+};
+
+export const getAuditSupportPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/audit-support');
+};

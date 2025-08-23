@@ -36,26 +36,24 @@
     </div>
 
     <div class="contact-form">
-      <form>
-        <label>Your First Name</label>
-        <input type="text" placeholder="Enter your first name" required>
+<form action="/submit-contact" method="POST">
+    <label for="first-name">Your First Name</label>
+    <input type="text" id="first-name" name="firstName" placeholder="Enter your first name" required>
 
-        <label>Your Email Address*</label>
-        <input type="email" placeholder="Enter your email address" required>
+    <label for="email">Your Email Address*</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-        <label>Phone/Mobile*</label>
-        <input type="text" placeholder="Short answer" required>
+    <label for="phone">Phone/Mobile*</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-        <label>Location*</label>
-        <input type="text" placeholder="Short answer" required>
+    <label for="location">Location*</label>
+    <input type="text" id="location" name="location" placeholder="Enter your city or location" required>
 
-        
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" placeholder="Type your message..."></textarea>
 
-        <label>Your Message</label>
-        <textarea placeholder="Type your message..."></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
+    <button type="submit">Submit</button>
+</form>
     </div>
   </section>
 
