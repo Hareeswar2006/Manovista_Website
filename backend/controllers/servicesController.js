@@ -22,14 +22,22 @@ export const getPartnershipPage = (req, res) => {
   res.render('incorporation_services/partnership');
 };
 
-export const getBookkeepingPage = (req, res) => {
-  res.render('incorporation_services/bookkeeping');
+export const getEnterprisePage = (req, res) => {
+  res.render('management_consulting/enterprise');
 };
 
-export const getFinancialStatementsPage = (req, res) => {
-  res.render('accounting-and-bookkeeping-services/financial-statements');
+export const getVirtualPage = (req, res) => {
+  res.render('management_consulting/virtual');
 };
 
-export const getTaxPage = (req, res) => {
-  res.render('accounting-and-bookkeeping-services/tax');
+export const getStartupPage = (req, res) => {
+  res.render('management_consulting/startup');
+};
+
+export const getFinancialPage = (req, res) => {
+  res.render('management_consulting/financial');
+};
+
+export const getBpoPage = (req, res) => {
+  res.render('management_consulting/bpo');
 };
