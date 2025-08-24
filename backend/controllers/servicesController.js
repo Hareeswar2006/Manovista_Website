@@ -22,6 +22,31 @@ export const getPartnershipPage = (req, res) => {
   res.render('incorporation_services/partnership');
 };
 
+
+
+export const getBookkeepingPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/bookkeeping');
+};
+
+export const getTaxCompliancePage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/tax-compliance');
+};
+
+export const getFinancialStatementsPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/financial-statements');
+};
+
+export const getTaxPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/tax');
+};
+
+export const getAuditSupportPage = (req, res) => {
+  res.render('accounting-and-bookkeeping-services/audit-support');
+};
+
+
+
+
 export const getEnterprisePage = (req, res) => {
   res.render('management_consulting/enterprise');
 };
@@ -40,12 +65,5 @@ export const getFinancialPage = (req, res) => {
 
 export const getBpoPage = (req, res) => {
   res.render('management_consulting/bpo');
-};
 
-export const getTaxCompliancePage = (req, res) => {
-  res.render('accounting-and-bookkeeping-services/tax-compliance');
-};
-
-export const getAuditSupportPage = (req, res) => {
-  res.render('accounting-and-bookkeeping-services/audit-support');
 };
