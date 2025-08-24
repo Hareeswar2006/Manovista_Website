@@ -1,153 +1,280 @@
 /*
- * Basic styling for Startup Advisory & Growth Strategies page
- * Clean, modern look with professional typography
+ * This CSS file for Limited Liability Partnership (LLP) page
+ * now uses the EXACT color palette from the provided Private Limited Company CSS.
+ * The 'content-section' backgrounds are enhanced with subtle, alternating gradients
+ * for a richer, modern, and professional look, WITHOUT creating a "card" effect.
  */
 
 :root {
-    --primary-color: #0a4d68;   /* deep consulting blue */
-    --secondary-color: #088395; /* accent teal */
-    --light-bg: #f9f9f9;
-    --dark-text: #222;
-    --light-text: #555;
+    /* EXACT Color Palette from your Private Limited Company CSS */
+    --primary-dark: #12141D;
+    --primary-blue: #1B263B;
+    --secondary-blue: #2a3952;
+    --light-gray: #f4f7f5; /* Base for one background */
+    --accent-gold: #FFD700;
+    --white: #ffffff; /* Base for other background */
+    --text-light: #e0e1dd;
+    --text-dark: #333;
+    --border-color: #e1e1e1;
+    /* NEW: A very subtle background color for the body,
+             to allow both --white and --light-gray sections to clearly stand out. */
+    --body-background-subtle: #fbfbfb; /* Slightly off-white */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--light-bg);
-    color: var(--dark-text);
-    line-height: 1.6;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
+    line-height: 1.7;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(10, 77, 104, 0.7), rgba(10, 77, 104, 0.7)),
-                url('/assets/startup-hero-bg.jpg') center/cover no-repeat;
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.hero-quote {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    font-weight: 300;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-.btn:hover {
-    background-color: #066878;
-}
-
-/* Content Sections */
-.content-section {
-    padding: 60px 20px;
-    background-color: white;
-}
-
-.content-section:nth-child(even) {
-    background-color: var(--light-bg);
+.page-wrapper {
+    max-width: 100%;
 }
 
 .container {
+    width: 90%;
     max-width: 1100px;
     margin: 0 auto;
 }
 
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { font-size: 2.5rem; color: var(--primary-dark); text-align: center; margin-bottom: 60px; }
+h3 { font-size: 1.4rem; }
+
+section {
+    padding:100px 0;
+    overflow: hidden;
+}
+
+/* Base styling for all content sections, ensure no card-like features */
+.content-section {
+    padding: 60px 0; /* Consistent vertical padding */
+    overflow: hidden;
+    border-radius: 0; /* No rounded corners */
+    box-shadow: none; /* No shadow */
+    margin: 0; /* No margin separating sections */
+}
+
+/* Alternating Backgrounds for Content Sections (Overview, Key Features, Documents Required) */
+/*
+   Based on the HTML structure:
+   1. Hero (section.hero)
+   2. Overview (section.content-section.key-advantages) - Will be light-gray gradient
+   3. Key Features (section.content-section.key-advantages) - Will be white gradient
+   4. Process (section.process) - Dark blue background, provides strong contrast
+   5. Documents (section.content-section.key-advantages) - Will be light-gray gradient
+   6. Footer (section.footer)
+*/
+
+/* Target the Overview Section (2nd 'section' element, which is first 'key-advantages' content-section) */
+section.content-section.key-advantages:nth-of-type(2) {
+    /* Subtle gradient using light-gray */
+    background: linear-gradient(to bottom, var(--light-gray) 0%, #eff2f0 100%);
+}
+
+/* Target the Key Features Section (3rd 'section' element, which is second 'key-advantages' content-section) */
+section.content-section.key-advantages:nth-of-type(3) {
+    /* Subtle gradient using white */
+    background: linear-gradient(to bottom, var(--white) 0%, #fcfcfc 100%);
+}
+
+/* Target the Documents Required Section (5th 'section' element, which is third 'key-advantages' content-section) */
+section.content-section.key-advantages:nth-of-type(5) {
+    /* Subtle gradient using light-gray again for alternation */
+    background: linear-gradient(to bottom, var(--light-gray) 0%, #eff2f0 100%);
+}
+
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.key-advantages{
+    padding : 25px 0; /* Inner padding for specific section type content */
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
 .centered-text {
     text-align: center;
-    margin-bottom: 40px;
-    color: var(--primary-color);
+    max-width: 800px;
+    margin: 0 auto 60px;
 }
 
+/* Hero Section */
+.hero.llp-hero {
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/hero-llp.jpeg') no-repeat center center/cover;
+   /* background-attachment: fixed;  Parallax effect for richness */
+    padding: 220px 0;
+    text-align: center;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 20px auto 40px;
+    color: var(--text-light);
+    max-width: 720px;
+}
+
+/* Content Row Styling (within content-section) */
 .content-row {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
+    gap: 60px;
+    margin-bottom: 3rem;
+    padding: 0 20px; /* Horizontal padding for content inside the section */
 }
-
-.content-row.reverse {
+.content-row:last-child {
+    margin-bottom: 0;
+}
+.content-row:nth-child(even) {
     flex-direction: row-reverse;
 }
-
-.content-text {
-    flex: 1;
+.content-text { flex: 1; }
+.content-image { flex: 1; }
+.content-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
 .content-text h3 {
-    margin-top: 0;
-    color: var(--secondary-color);
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 2rem;
 }
-
-.content-text p {
-    color: var(--light-text);
-}
-
 .content-text ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.content-text li {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+.content-text li i {
+    color: var(--accent-gold);
+    margin-right: 15px;
+    margin-top: 4px;
 }
 
-.content-text ul li {
-    margin-bottom: 12px;
-    font-size: 1rem;
-    color: var(--dark-text);
+/* Process Section (Distinct dark background) */
+.process {
+    background-color: var(--primary-blue);
 }
-
-.content-text ul li i {
-    margin-right: 10px;
-    color: var(--secondary-color);
-}
-
-.content-image {
-    flex: 1;
+.process h2 { color: var(--white); }
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
     text-align: center;
+    color: var(--text-light);
+    margin-top: 60px;
 }
-
-.content-image img {
-    max-width: 100%;
-    border-radius: 8px;
+.step-icon {
+    color: var(--accent-gold);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
-
-/* Footer Section */
-.footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.footer h3 {
+.step h3 {
+    color: var(--white);
     margin-bottom: 10px;
 }
 
+/* Call to Action Section (Using footer styling) */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 80px 0;
+    text-align: center;
+}
+.footer h3 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 30px;
+}
 .footer p {
-    margin-bottom: 20px;
-    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 40px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .content-row {
-        flex-direction: column;
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    .content-section {
+        padding: 40px 0;
     }
-
-    .hero h1 {
-        font-size: 2rem;
+    .content-row, .content-row:nth-child(even) {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .hero { padding: 100px 0; }
+    .content-image img { max-width: 80%; margin: 0 auto; }
+    .content-text h3 { text-align: center; }
+    .content-text ul { text-align: left; }
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    section { padding: 60px 0; }
+    .content-section {
+        padding: 30px 0;
+    }
+    .process-steps { grid-template-columns: 1fr; }
+    .hero { padding: 80px 0; }
+    .content-text h3 { font-size: 1.8rem; }
+}
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    .hero-content p { font-size: 1rem; }
+    .btn { padding: 12px 25px; font-size: 1rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 40px; }
+    .content-text h3 { font-size: 1.5rem; }
+    .content-text p, .content-text li { font-size: 0.95rem; }
+    .step-icon { font-size: 3rem; }
+    .footer h3 { font-size: 1.8rem; }
+    .footer p { font-size: 0.9rem; margin-bottom: 30px; }
+    .content-section {
+        padding: 25px 0;
     }
 }
