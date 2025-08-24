@@ -1,0 +1,325 @@
+/*
+ * This CSS file is for the Payroll Support & Compliance page.
+ * It uses a creative, unique layout with distinct sections to
+ * avoid matching other subpages while maintaining the brand theme.
+ */
+
+:root {
+    /* EXACT Color Palette from other CSS files */
+    --primary-dark: #12141D;
+    --primary-blue: #1B263B;
+    --secondary-blue: #2a3952;
+    --light-gray: #f4f7f5;
+    --accent-gold: #FFD700;
+    --white: #ffffff;
+    --text-light: #e0e1dd;
+    --text-dark: #333;
+    --border-color: #e1e1e1;
+    --font-main: 'Poppins', sans-serif;
+    --font-alt: 'Montserrat', sans-serif;
+    --radius-md: 8px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+}
+
+/* General & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-main);
+    background: #f7f9fb;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+a { text-decoration: none; color: var(--primary-blue); }
+h1, h2, h3, h4 { font-family: var(--font-alt); font-weight: 700; line-height: 1.2; }
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { font-size: 2.5rem; color: var(--primary-dark); text-align: center; margin-bottom: 60px; }
+h3 { font-size: 1.4rem; }
+p { margin-bottom: 1rem; }
+ul { list-style: none; padding: 0; }
+section { padding: 100px 0; overflow: hidden; }
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+.btn {
+    display: inline-block; padding: 15px 35px; background: var(--accent-gold); color: var(--primary-dark); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: var(--transition); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); border: none; cursor: pointer;
+}
+.btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4); }
+.btn-outline {
+    background: transparent; border: 2px solid var(--white); color: var(--white); box-shadow: none;
+}
+.btn-outline:hover {
+    background: var(--white); color: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+.btn-outline-dark {
+    background: transparent; border: 2px solid var(--primary-dark); color: var(--primary-dark); box-shadow: none;
+}
+.btn-outline-dark:hover {
+    background: var(--primary-dark); color: var(--white); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.centered-text { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+.section-subtitle { text-align: center; font-size: 1.1rem; max-width: 800px; margin: -40px auto 50px; }
+
+.fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Hero Section */
+.hero.payroll-hero {
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/payroll-hero.jpg') no-repeat center center/cover;
+    padding: 180px 0;
+    text-align: center;
+    color: var(--white);
+}
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero-content h1 {
+    font-size: 3.8rem;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+/* New: About Payroll Section */
+.section-about-payroll {
+    background-color: var(--light-gray);
+}
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.content-row.reverse {
+    flex-direction: row-reverse;
+}
+.content-image-container {
+    flex: 1;
+}
+.content-image-container img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+.content-text {
+    flex: 1;
+}
+.content-text h2 {
+    text-align: left;
+}
+.content-text p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.content-text ul {
+    list-style: none;
+    padding: 0;
+}
+.content-text li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.content-text li i {
+    color: var(--primary-blue);
+    margin-top: 4px;
+}
+
+
+/* New: Benefits Grid */
+.section-benefits-grid {
+    background-color: var(--white);
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.benefit-card {
+    background: linear-gradient(135deg, rgba(27,38,59,0.05) 0%, rgba(27,38,59,0.02) 100%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(27,38,59,0.1);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: var(--shadow-sm);
+}
+.icon-box i {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+}
+.benefit-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+.benefit-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* New: Features Timeline */
+.section-features-timeline {
+    background-color: var(--light-gray);
+}
+.feature-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    padding-top: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.feature-timeline::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-blue);
+}
+.timeline-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.timeline-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.timeline-icon i {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+}
+.timeline-content {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+.timeline-content h3 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+/* Final Call to Action Section */
+.footer-cta {
+    background: linear-gradient(rgba(18, 20, 29, 0.9), rgba(18, 20, 29, 0.9)), url('/assets/cta-banner-payroll.jpg') no-repeat center center/cover;
+    padding: 100px 0;
+    text-align: center;
+    color: var(--white);
+}
+.cta-content h2 {
+    font-size: 3rem;
+    color: var(--white);
+}
+.cta-content p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 20px auto 40px;
+}
+.cta-content .btn-outline {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+.cta-content .btn-outline:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .content-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .benefits-grid,
+    .feature-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .feature-timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 3px;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+    .timeline-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+    }
+    .timeline-item:nth-child(odd) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    .timeline-icon { margin-bottom: 0; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero.payroll-hero { padding: 120px 0; }
+    .benefits-grid,
+    .feature-timeline {
+        grid-template-columns: 1fr;
+    }
+    .timeline-item:nth-child(odd) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    .cta-content h2 { font-size: 2.2rem; }
+}

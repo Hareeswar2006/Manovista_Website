@@ -1,0 +1,233 @@
+/*
+ * This CSS file for the Hiring & Staffing Support page.
+ * It's based on the common design patterns from your other service pages.
+ */
+
+:root {
+    /* EXACT Color Palette from your other CSS files */
+    --primary-dark: #12141D;
+    --primary-blue: #1B263B;
+    --secondary-blue: #2a3952;
+    --light-gray: #f4f7f5;
+    --accent-gold: #FFD700;
+    --white: #ffffff;
+    --text-light: #e0e1dd;
+    --text-dark: #333;
+    --border-color: #e1e1e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
+    line-height: 1.7;
+}
+
+.page-wrapper {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+h2 { font-size: 2.5rem; color: var(--primary-dark); text-align: center; margin-bottom: 60px; }
+h3 { font-size: 1.4rem; }
+
+section {
+    padding:100px 0;
+    overflow: hidden;
+}
+.content-section {
+    padding:60px 0;
+    overflow: hidden;
+}
+.section-overview,
+.section-features {
+    background: var(--background-light);
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.key-advantages{
+    padding : 25px;
+}
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+.centered-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* Hero Section */
+.hero.hiring-hero {
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/hiring-hero.jpg') no-repeat center center/cover;
+    padding: 180px 0;
+    text-align: center;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 20px auto 40px;
+    color: var(--text-light);
+    max-width: 700px;
+}
+
+/* Content Section with Alternating Layout */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.content-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.content-text { flex: 1; }
+.content-image { flex: 1; }
+.content-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.content-text h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+.content-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.content-text li {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+.content-text li i {
+    color: var(--accent-gold);
+    margin-right: 15px;
+    margin-top: 4px;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.benefit-item i {
+    font-size: 3.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+}
+.benefit-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+.benefit-item p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    flex-grow: 1;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 80px 0 30px;
+    text-align: center;
+}
+.footer h3 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+.footer p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+.footer-bottom {
+    margin-top: 50px;
+    border-top: 1px solid var(--secondary-blue);
+    padding-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    .content-row, .content-row:nth-child(even) {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    section { padding: 60px 0; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .hero { padding: 80px 0; }
+    .content-text h3 { font-size: 1.8rem; }
+}

@@ -67,3 +67,23 @@ export const getBpoPage = (req, res) => {
   res.render('management_consulting/bpo');
 
 };
+
+export const getHiringStaffingPage = (req, res) => {
+  res.render('hrmanagement/hiring_staff'); 
+};
+
+export const getTalentSupplyPage = (req, res) => {
+  res.render('hrmanagement/talent_supply');
+};
+
+export const getPayrollSupportPage = (req, res) => {
+  res.render('hrmanagement/payroll_support');
+};
+
+export const getHrOperationManagementPage = (req, res) => {
+  res.render('hrmanagement/hr_operation_management'); 
+};
+
+export const getEmployeeTrainingPage = (req, res) => {
+  res.render('hrmanagement/training_coordination'); 
+};

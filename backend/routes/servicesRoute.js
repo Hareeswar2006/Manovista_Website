@@ -1,5 +1,5 @@
 import express from "express";
-import { getServices,getPrivateLimitedPage, getLimitedLiabilityPage, getOnePersonCompanyPage, getSoleProprietorshipPage, getPartnershipPage, getBookkeepingPage, getFinancialStatementsPage, getTaxPage, getTaxCompliancePage, getAuditSupportPage , getBpoPage, getEnterprisePage, getVirtualPage , getStartupPage , getFinancialPage} from "../controllers/servicesController.js";
+import { getServices,getPrivateLimitedPage, getLimitedLiabilityPage, getOnePersonCompanyPage, getSoleProprietorshipPage, getPartnershipPage, getBookkeepingPage, getFinancialStatementsPage, getTaxPage, getTaxCompliancePage, getAuditSupportPage , getBpoPage, getEnterprisePage, getVirtualPage , getStartupPage , getFinancialPage,getHiringStaffingPage, getTalentSupplyPage, getPayrollSupportPage, getHrOperationManagementPage, getEmployeeTrainingPage} from "../controllers/servicesController.js";
 
 const router = express.Router();
 router.get("/services", getServices);
@@ -24,4 +24,18 @@ router.get("/services/enterprise", getEnterprisePage);
 router.get("/services/virtual", getVirtualPage);
 router.get("/services/startup", getStartupPage);
 router.get("/services/financial", getFinancialPage);
+
+// HR MANAGEMENT
+
+router.get("/hrmanagement/hiring-staff", getHiringStaffingPage); 
+router.get("/hrmanagement/talent-supply", getTalentSupplyPage);
+router.get("/hrmanagement/payroll-support", getPayrollSupportPage);
+router.get("/services/hrmanagement/hr-operation-management", getHrOperationManagementPage);
+router.get("/services/hrmanagement/employee-training-coordination", getEmployeeTrainingPage);
+
+
+
+
+
 export default router;
+
