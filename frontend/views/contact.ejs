@@ -61,4 +61,37 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62230.27971889573!2d77.61011684822283!3d12.95736486082457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f292d86d63%3A0x8a7c66c0fc086ffc!2sOxford%20Towers!5e0!3m2!1sen!2sin!4v1721500000000!5m2!1sen!2sin" 
       width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.querySelector('.contact-form form');
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('/submit-contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        alert(result.message);
+                        contactForm.reset();
+                    } else {
+                        alert(`Error: ${result.message || 'Something went wrong.'}`);
+                    }
+                } catch (error) {
+                    console.error('Error submitting contact form:', error);
+                    alert('There was an error submitting your contact inquiry. Please try again later.');
+                }
+            });
+        });
+    </script>
 <%- include('./partials/footer.ejs') %>
