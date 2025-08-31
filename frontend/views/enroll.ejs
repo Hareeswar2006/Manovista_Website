@@ -1,0 +1,45 @@
+<%- include('partials/header.ejs') %>
+<title>Enrollment | Manovista Consultancy LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/enroll.css">
+
+<main>
+    <section class="enrollment-hero">
+        <div class="container">
+            <div class="enrollment-content">
+                <h1 id="enrollment-heading">Enroll in Professional Bookkeeping Services</h1>
+                <p class="tagline">Unlock your business potential with expert financial guidance.</p>
+                <form class="enrollment-form">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Selected Service</label>
+                        <input type="text" id="service" name="service" readonly>
+                    </div>
+                    <button type="submit" class="btn">Submit Enrollment</button>
+                    <p class="disclaimer">By submitting this form, you agree to our Terms of Service and Privacy Policy.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer.ejs') %>
+<script src="/js/enroll.js"></script>

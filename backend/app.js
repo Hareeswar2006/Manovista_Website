@@ -6,6 +6,7 @@ import homeRoutes from "./routes/homeRoute.js";
 import aboutRoutes from "./routes/aboutRoute.js";
 import servicesRoutes from "./routes/servicesRoute.js";
 import contactRoutes from "./routes/contactRoute.js";
+import enrollRoutes from "./routes/enrollRoute.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,12 +21,15 @@ app.set("views", path.join(__dirname, "../frontend/views"));
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "../frontend/public")));
+app.use(express.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
+app.use(express.json()); // For parsing application/json
 
 // Use routes
 app.use("/", homeRoutes);
 app.use("/", aboutRoutes);
 app.use("/", servicesRoutes);
 app.use("/", contactRoutes);
+app.use("/", enrollRoutes);
 
 // Start server
 app.listen(PORT, () => {

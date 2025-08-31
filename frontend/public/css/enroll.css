@@ -1,0 +1,202 @@
+:root {
+    --primary-dark: #12141D;
+    --primary-blue: #1B263B;
+    --secondary-blue: #2a3952;
+    --light-gray: #f4f7f5;
+    --accent-gold: #FFD700;
+    --white: #ffffff;
+    --text-light: #e0e1dd;
+    --text-dark: #333;
+    --border-color: #e1e1e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f9fb;
+    color: #343a40;
+    line-height: 1.7;
+    position: relative;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+/* Enrollment Hero Section */
+.enrollment-hero {
+    background: linear-gradient(rgba(18, 20, 29, 0.85), rgba(18, 20, 29, 0.85)), url('/assets/bookkeeping-service/bookkeeping_service.jpg') no-repeat center center/cover;
+    padding: 100px 0;
+    text-align: center;
+    color: var(--white);
+    margin-top: 100px;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enrollment-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    color: var(--text-dark);
+}
+
+.enrollment-content h1 {
+    color: var(--primary-dark);
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: none;
+}
+
+.enrollment-content .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.enrollment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group:nth-child(5) { /* Selected Service field */
+    grid-column: 1 / -1; /* Span full width */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    background-color: var(--light-gray);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    outline: none;
+}
+
+.form-group input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.enrollment-form .btn {
+    width: auto;
+    margin-top: 20px;
+    grid-column: 1 / -1; /* Span full width */
+    justify-self: center;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    grid-column: 1 / -1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .enrollment-content {
+        padding: 30px;
+        margin: 0 20px;
+    }
+    .enrollment-content h1 {
+        font-size: 2rem;
+    }
+    .enrollment-form {
+        grid-template-columns: 1fr; /* Stack inputs vertically */
+    }
+    .form-group:nth-child(5) {
+        grid-column: auto; /* Reset span for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .enrollment-hero {
+        padding: 80px 0;
+    }
+    .enrollment-content {
+        padding: 20px;
+    }
+    .enrollment-content h1 {
+        font-size: 1.8rem;
+    }
+    .enrollment-content .tagline {
+        font-size: 1rem;
+    }
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    .disclaimer {
+        font-size: 0.8rem;
+    }
+}
