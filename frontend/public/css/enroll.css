@@ -41,22 +41,33 @@ h1, h2, h3 {
 
 h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
 
+/* Styling for the dynamic service name in the heading */
+.service-name-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-blue)); /* Gradient using header blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers not supporting background-clip: text */
+    display: inline;
+}
+
 .btn {
     display: inline-block;
     padding: 15px 35px;
-    background: linear-gradient(45deg, var(--accent-gold), #ffb700);
-    color: var(--primary-dark);
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-blue)); /* Gradient using header blue */
+    color: var(--white); /* Changed to white for better contrast on blue */
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Adjusted shadow color for header blue */
 }
 
 .btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4); /* Adjusted shadow color for header blue */
+    background: linear-gradient(45deg, var(--primary-blue), var(--primary-color)); /* Reverse gradient on hover */
 }
 
 /* Enrollment Hero Section */
@@ -66,25 +77,28 @@ h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0
     text-align: center;
     color: var(--white);
     margin-top: 100px;
-    min-height: 100vh; /* Ensure it takes full viewport height */
+    min-height: calc(100vh - 100px); /* Adjust for header height */
     display: flex;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed; /* Parallax effect */
 }
 
 .enrollment-content {
     max-width: 700px;
     margin: 0 auto;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+    background: rgba(255, 255, 255, 0.98); /* Less transparent white background */
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     color: var(--text-dark);
+    position: relative; /* For back link positioning */
 }
 
 .enrollment-content h1 {
     color: var(--primary-dark);
     font-size: 2.8rem;
+    margin-top: 20px; /* Add space below back link */
     margin-bottom: 15px;
     text-shadow: none;
 }
@@ -92,7 +106,28 @@ h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0
 .enrollment-content .tagline {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: var(--text-dark);
+    color: #555;
+}
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-gold);
+}
+
+.back-link i {
+    font-size: 1rem;
 }
 
 .enrollment-form {
@@ -100,10 +135,11 @@ h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     text-align: left;
+    margin-top: 30px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 0; /* Remove default margin */
 }
 
 .form-group:nth-child(5) { /* Selected Service field */
@@ -115,6 +151,14 @@ h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0
     margin-bottom: 8px;
     font-weight: 600;
     color: var(--primary-dark);
+    display: flex; /* To align icon with text */
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group label i {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
 }
 
 .form-group input[type="text"],
@@ -141,6 +185,7 @@ h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0
 .form-group input[readonly] {
     background-color: #e9ecef;
     cursor: not-allowed;
+    border-color: #ced4da; /* Slightly different border for readonly */
 }
 
 .enrollment-form .btn {
@@ -166,12 +211,24 @@ h1 { font-size: 3.5rem; color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0
     }
     .enrollment-content h1 {
         font-size: 2rem;
+        margin-top: 15px; /* Adjust for smaller screens */
+    }
+    .enrollment-content .tagline {
+        font-size: 1.1rem;
     }
     .enrollment-form {
         grid-template-columns: 1fr; /* Stack inputs vertically */
     }
     .form-group:nth-child(5) {
         grid-column: auto; /* Reset span for smaller screens */
+    }
+    .back-link {
+        top: 15px;
+        left: 15px;
+        font-size: 0.9rem;
+    }
+    .back-link i {
+        font-size: 0.9rem;
     }
 }
 
