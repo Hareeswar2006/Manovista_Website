@@ -27,11 +27,11 @@ router.get("/services/financial", getFinancialPage);
 
 // HR MANAGEMENT
 
-router.get("/hrmanagement/hiring-staff", getHiringStaffingPage); 
-router.get("/hrmanagement/talent-supply", getTalentSupplyPage);
-router.get("/hrmanagement/payroll-support", getPayrollSupportPage);
-router.get("/services/hrmanagement/hr-operation-management", getHrOperationManagementPage);
-router.get("/services/hrmanagement/employee-training-coordination", getEmployeeTrainingPage);
+router.get("/services/hiring-staff", getHiringStaffingPage); 
+router.get("/services/talent-supply", getTalentSupplyPage);
+router.get("/services/payroll-support", getPayrollSupportPage);
+router.get("/services/hr-operation-management", getHrOperationManagementPage);
+router.get("/services/employee-training-coordination", getEmployeeTrainingPage);
 
 
 
