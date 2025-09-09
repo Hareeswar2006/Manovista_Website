@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (serviceName) {
-        enrollmentHeading.innerHTML = `Enroll in <span class="service-name-gradient">${serviceName}</span>`;
+        enrollmentHeading.innerHTML = `<span class="service-name-gradient">${serviceName}</span>`;
         selectedServiceInput.value = serviceName;
         backToServiceLink.href = getServicePageLink(serviceName);
     } else {
-        enrollmentHeading.textContent = 'Enroll in Our Services';
+        enrollmentHeading.textContent = 'Our Services';
         selectedServiceInput.value = 'General Inquiry';
         backToServiceLink.href = "/services"; // Default back link
     }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Error submitting form:', error);
-            alert('There was an error submitting your enrollment. Please try again later.');
+            alert('There was an error submitting your form. Please try again later.');
         }
     });
 });

@@ -40,11 +40,11 @@ export const submitEnrollment = async (req, res) => {
 
         if (error) {
             console.error("Supabase insertion error:", error);
-            return res.status(500).json({ message: "Error submitting enrollment. Please try again later." });
+            return res.status(500).json({ message: "Error submitting form. Please try again later." });
         }
 
         res.status(200).json({
-            message: "Enrollment submitted successfully!",
+            message: "Submitted successfully!",
             data: data,
         });
     } catch (err) {
